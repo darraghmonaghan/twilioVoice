@@ -9,7 +9,7 @@ get '/hello-monkey' do
   		'+442890600191' => 'Monaghan Household'
   }
 
-  name = people(params['From']) || 'There'
+  name = people[params['From']] || 'There'
 
   Twilio::TwiML::Response.new do |r|
     r.Say 'Hi #{name}, Please wait one moment whilst we connect you to Darragh. He is a busy guy, let me try and find him.'
